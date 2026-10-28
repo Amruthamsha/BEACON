@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "BEACON: Biologically Inspired Edge-Swarm Coordination Simulator"
+authors:
+  - family-names: "Raju"
+    given-names: "Amruthamsha Prashanth"
+    affiliation: "Nitte Meenakshi Institute of Technology (NMIT), Bengaluru, India"
+license: MIT
+date-released: 2026-10-28
+preferred-citation:
+  type: unpublished
+  title: "A Biologically Inspired Edge-Swarm Framework for Resilient, Low-Latency Multi-Agent Coordination"
+  authors:
+    - family-names: "Raju"
+      given-names: "Amruthamsha Prashanth"
+  year: 2026
+  notes: "Manuscript under review"

@@ -1,0 +1,8 @@
+Configuration,P95 latency (ms),Macro-F1,50% failure recovery (rounds)
+Full framework,14,0.984,0
+No stigmergic field (λ=0),14,0.984,0
+No pheromone memory (α=0),20,0.984,0
+No heuristic term (β=0),16,0.984,0
+No evaporation (ρ=0),20,0.984,0
+No pheromone bounds,20,0.984,0
+No gossip consensus,30,0.595,0

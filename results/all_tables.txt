@@ -1,0 +1,136 @@
+
+===== Table 5 (latency) =====
+     Architecture Mean latency (ms) P95 latency (ms) P99 latency (ms) Std. dev.
+Centralized cloud        66.4 ± 0.3            125.3            169.5      31.2
+        Edge-only         7.4 ± 0.5             30.2             41.5       9.4
+           FedAvg         8.2 ± 0.5             31.0             42.5       9.5
+      Gossip-only         7.3 ± 0.5             30.1             41.9       9.4
+           BEACON         7.0 ± 0.6             14.0             19.4       4.1
+
+--- LaTeX ---
+\begin{tabular}{lllll}
+\toprule
+Architecture & Mean latency (ms) & P95 latency (ms) & P99 latency (ms) & Std. dev. \\
+\midrule
+Centralized cloud & 66.4 ± 0.3 & 125.3 & 169.5 & 31.2 \\
+Edge-only & 7.4 ± 0.5 & 30.2 & 41.5 & 9.4 \\
+FedAvg & 8.2 ± 0.5 & 31.0 & 42.5 & 9.5 \\
+Gossip-only & 7.3 ± 0.5 & 30.1 & 41.9 & 9.4 \\
+BEACON & 7.0 ± 0.6 & 14.0 & 19.4 & 4.1 \\
+\bottomrule
+\end{tabular}
+
+
+===== Table 6 (non-IID) =====
+     Architecture Dirichlet a=0.1 Dirichlet a=0.5 Dirichlet a=5.0
+Centralized cloud   0.984 ± 0.002   0.990 ± 0.001   0.991 ± 0.002
+        Edge-only   0.716 ± 0.193   0.908 ± 0.058   0.990 ± 0.003
+           FedAvg   0.984 ± 0.003   0.989 ± 0.001   0.991 ± 0.002
+      Gossip-only   0.984 ± 0.002   0.989 ± 0.002   0.991 ± 0.002
+           BEACON   0.985 ± 0.002   0.990 ± 0.001   0.991 ± 0.003
+
+--- LaTeX ---
+\begin{tabular}{llll}
+\toprule
+Architecture & Dirichlet a=0.1 & Dirichlet a=0.5 & Dirichlet a=5.0 \\
+\midrule
+Centralized cloud & 0.984 ± 0.002 & 0.990 ± 0.001 & 0.991 ± 0.002 \\
+Edge-only & 0.716 ± 0.193 & 0.908 ± 0.058 & 0.990 ± 0.003 \\
+FedAvg & 0.984 ± 0.003 & 0.989 ± 0.001 & 0.991 ± 0.002 \\
+Gossip-only & 0.984 ± 0.002 & 0.989 ± 0.002 & 0.991 ± 0.002 \\
+BEACON & 0.985 ± 0.002 & 0.990 ± 0.001 & 0.991 ± 0.003 \\
+\bottomrule
+\end{tabular}
+
+
+===== Table 7 (resilience) =====
+            Architecture 10% loss: drop / recovery 30% loss: drop / recovery 50% loss: drop / recovery
+                  FedAvg             -0.1 pp / 0 r              0.1 pp / 0 r             -0.0 pp / 0 r
+             Gossip-only              0.0 pp / 0 r             -0.0 pp / 0 r              0.1 pp / 0 r
+                  BEACON             -0.0 pp / 0 r             -0.1 pp / 0 r             -0.1 pp / 0 r
+FedAvg (aggregator lost)             Total failure             Total failure             Total failure
+
+--- LaTeX ---
+\begin{tabular}{llll}
+\toprule
+Architecture & 10% loss: drop / recovery & 30% loss: drop / recovery & 50% loss: drop / recovery \\
+\midrule
+FedAvg & -0.1 pp / 0 r & 0.1 pp / 0 r & -0.0 pp / 0 r \\
+Gossip-only & 0.0 pp / 0 r & -0.0 pp / 0 r & 0.1 pp / 0 r \\
+BEACON & -0.0 pp / 0 r & -0.1 pp / 0 r & -0.1 pp / 0 r \\
+FedAvg (aggregator lost) & Total failure & Total failure & Total failure \\
+\bottomrule
+\end{tabular}
+
+
+===== Table 8 (scalability) =====
+  N  BEACON rounds  BEACON MB/node  FedAvg rounds  FedAvg MB/node  FedAvg MB/server
+ 10             15            2.83             25            1.03             10.26
+ 25             20            2.92             25            1.03             25.64
+ 50             10            2.93             20            1.03             51.29
+100             10            2.96             15            1.03            102.58
+200             10            3.01             15            1.03            205.15
+
+--- LaTeX ---
+\begin{tabular}{rrrrrr}
+\toprule
+N & BEACON rounds & BEACON MB/node & FedAvg rounds & FedAvg MB/node & FedAvg MB/server \\
+\midrule
+10 & 15 & 2.830000 & 25 & 1.030000 & 10.260000 \\
+25 & 20 & 2.920000 & 25 & 1.030000 & 25.640000 \\
+50 & 10 & 2.930000 & 20 & 1.030000 & 51.290000 \\
+100 & 10 & 2.960000 & 15 & 1.030000 & 102.580000 \\
+200 & 10 & 3.010000 & 15 & 1.030000 & 205.150000 \\
+\bottomrule
+\end{tabular}
+
+
+===== Table 9 (sensitivity) =====
+         Parameter              Value P95 latency (ms)              Macro-F1 Observation
+     λ (diffusion) 0.05 / 0.25 / 0.75     15 / 15 / 15 0.989 / 0.989 / 0.989            
+   ρ (evaporation)   0.01 / 0.1 / 0.5     21 / 15 / 13 0.989 / 0.989 / 0.989            
+α (pheromone exp.)    0.0 / 1.0 / 3.0     22 / 15 / 13 0.989 / 0.989 / 0.989            
+β (heuristic exp.)    0.0 / 2.0 / 5.0     17 / 15 / 14 0.989 / 0.989 / 0.989            
+             φ_min 0.001 / 0.01 / 0.1     13 / 13 / 13 0.989 / 0.989 / 0.989            
+ ξ (energy weight)    0.0 / 0.5 / 1.0     26 / 26 / 26 0.989 / 0.989 / 0.989            
+
+--- LaTeX ---
+\begin{tabular}{lllll}
+\toprule
+Parameter & Value & P95 latency (ms) & Macro-F1 & Observation \\
+\midrule
+λ (diffusion) & 0.05 / 0.25 / 0.75 & 15 / 15 / 15 & 0.989 / 0.989 / 0.989 &  \\
+ρ (evaporation) & 0.01 / 0.1 / 0.5 & 21 / 15 / 13 & 0.989 / 0.989 / 0.989 &  \\
+α (pheromone exp.) & 0.0 / 1.0 / 3.0 & 22 / 15 / 13 & 0.989 / 0.989 / 0.989 &  \\
+β (heuristic exp.) & 0.0 / 2.0 / 5.0 & 17 / 15 / 14 & 0.989 / 0.989 / 0.989 &  \\
+φ_min & 0.001 / 0.01 / 0.1 & 13 / 13 / 13 & 0.989 / 0.989 / 0.989 &  \\
+ξ (energy weight) & 0.0 / 0.5 / 1.0 & 26 / 26 / 26 & 0.989 / 0.989 / 0.989 &  \\
+\bottomrule
+\end{tabular}
+
+
+===== Table 10 (ablation) =====
+            Configuration P95 latency (ms) Macro-F1 50% failure recovery (rounds)
+           Full framework               14    0.984                             0
+No stigmergic field (λ=0)               14    0.984                             0
+No pheromone memory (α=0)               20    0.984                             0
+  No heuristic term (β=0)               16    0.984                             0
+     No evaporation (ρ=0)               20    0.984                             0
+      No pheromone bounds               20    0.984                             0
+      No gossip consensus               30    0.595                             0
+
+--- LaTeX ---
+\begin{tabular}{llll}
+\toprule
+Configuration & P95 latency (ms) & Macro-F1 & 50% failure recovery (rounds) \\
+\midrule
+Full framework & 14 & 0.984 & 0 \\
+No stigmergic field (λ=0) & 14 & 0.984 & 0 \\
+No pheromone memory (α=0) & 20 & 0.984 & 0 \\
+No heuristic term (β=0) & 16 & 0.984 & 0 \\
+No evaporation (ρ=0) & 20 & 0.984 & 0 \\
+No pheromone bounds & 20 & 0.984 & 0 \\
+No gossip consensus & 30 & 0.595 & 0 \\
+\bottomrule
+\end{tabular}
+

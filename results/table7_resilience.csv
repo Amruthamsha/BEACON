@@ -1,0 +1,5 @@
+Architecture,10% loss: drop / recovery,30% loss: drop / recovery,50% loss: drop / recovery
+FedAvg,-0.1 pp / 0 r,0.1 pp / 0 r,-0.0 pp / 0 r
+Gossip-only,0.0 pp / 0 r,-0.0 pp / 0 r,0.1 pp / 0 r
+BEACON,-0.0 pp / 0 r,-0.1 pp / 0 r,-0.1 pp / 0 r
+FedAvg (aggregator lost),Total failure,Total failure,Total failure
